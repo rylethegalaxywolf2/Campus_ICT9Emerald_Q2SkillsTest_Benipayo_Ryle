@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OBMC Student Enrollment Form</title>
+
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(
+        rgba(0,0,0,0.4),
+        rgba(0,0,0,0.4)
+    ),
+    url("https://images.unsplash.com/photo-1580582932707-520aed937b7b") center/cover no-repeat;
+    color: #333;
+}
+
+nav {
+    background: #1f2937;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav .logo {
+    color: white;
+    font-weight: bold;
+}
+
+nav .search {
+    display: flex;
+    gap: 5px;
+}
+
+nav input {
+    padding: 6px;
+    border-radius: 4px;
+    border: none;
+}
+
+nav button {
+    padding: 6px 12px;
+    border: none;
+    background: #2563eb;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.main {
+    display: flex;
+    justify-content: center;
+    padding: 40px 15px;
+}
+
+.form-card {
+    width: 100%;
+    max-width: 1100px;
+    background: rgba(255,255,255,0.9);
+    border-radius: 12px;
+    padding: 30px;
+    backdrop-filter: blur(6px);
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.header h1 {
+    color: #2563eb;
+    margin-bottom: 8px;
+}
+
+.section {
+    margin-bottom: 20px;
+}
+
+.section h3 {
+    margin-bottom: 10px;
+    color: #1f2937;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+label {
+    font-size: 14px;
+    margin-bottom: 5px;
+    display: block;
+}
+
+input, select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+.full {
+    grid-column: 1 / -1;
+}
+
+.radio-group {
+    display: flex;
+    gap: 20px;
+    margin-top: 8px;
+}
+
+.checkbox {
+    margin-top: 10px;
+}
+
+.submit-btn {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.submit-btn button {
+    padding: 12px 25px;
+    border: none;
+    background: #2563eb;
+    color: white;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+footer {
+    text-align: center;
+    color: white;
+    padding: 15px;
+    font-size: 14px;
+}
+
+@media (max-width: 900px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    nav {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .form-card {
+        padding: 20px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+    <div class="logo">Enroll Now</div>
+    <div class="search">
+        <input type="text" placeholder="Search">
+        <button>Search</button>
+    </div>
+</nav>
+
+<div class="main">
+    <form class="form-card">
+        <div class="header">
+            <h1>OBMC Student Enrollment Form</h1>
+            <p>Fill out the form below to enroll for the upcoming school year.</p>
+        </div>
+
+        <div class="section">
+            <h3>Student Information</h3>
+            <div class="grid">
+                <div>
+                    <label>First Name</label>
+                    <input type="text">
+                </div>
+                <div>
+                    <label>Last Name</label>
+                    <input type="text">
+                </div>
+                <div>
+                    <label>Birth Date</label>
+                    <input type="date">
+                </div>
+                <div>
+                    <label>Gender</label>
+                    <select>
+                        <option>Select</option>
+                        <option>Male</option>
+                        <option>Female</option>
+                    </select>
+                </div>
+                <div>
+                    <label>Grade Level</label>
+                    <select>
+                        <option>Select</option>
+                        <option>Grade 7</option>
+                        <option>Grade 8</option>
+                        <option>Grade 9</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h3>Contact Details</h3>
+            <div class="grid">
+                <div class="full">
+                    <label>Email Address</label>
+                    <input type="email">
+                </div>
+                <div class="full">
+                    <label>Contact Number</label>
+                    <input type="tel">
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h3>Other Information</h3>
+            <label>Mode of Learning</label>
+            <div class="radio-group">
+                <label><input type="radio" name="mode"> Online</label>
+                <label><input type="radio" name="mode"> Face-to-Face</label>
+            </div>
+
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox">
+                    I confirm that the information provided is true and complete
+                </label>
+            </div>
+        </div>
+
+        <div class="submit-btn">
+            <button type="submit">Submit Enrollment</button>
+        </div>
+    </form>
+</div>
+
+<footer>
+    © 2025 Student Enrollment System | Ryle Benipayo 9-Emerald
+</footer>
+
+</body>
+</html>
